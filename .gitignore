@@ -1,0 +1,6 @@
+node_modules
+/vendor/
+.env
+/node_modules/
+config/database.php
+paypal.txt

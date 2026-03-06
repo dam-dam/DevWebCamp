@@ -1,0 +1,49 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.bloques{
+    
+    @include m.contenedor;
+    &__grid{
+        @include m.grid(1,3rem);
+        @include m.tablet{
+            margin-top: 10rem;
+            @include m.grid(2,3rem);
+        };
+    }
+}
+.bloque{
+    padding: 2rem;
+    color: v.$gris-claro;
+    border-radius: 2rem;
+    &:nth-child(1){
+        @include m.bg-gradiant(#cc0011d3)
+        
+    }   
+     &:nth-child(2){
+        @include m.bg-gradiant(#cc00ccd3)
+        
+    } 
+     &:nth-child(3){
+        @include m.bg-gradiant(#37ad13d3)
+        
+    }   
+     &:nth-child(4){
+        @include m.bg-gradiant(#17769E)
+        
+    }   
+    &__heading{
+        margin: 1rem 0 2rem 0;
+        font-size: 3.5rem;
+    }
+    
+    &__texto{
+        margin: 1rem 0;
+        &--cantidad{
+            margin-top: 5rem;
+            font-weight: v.$black;
+            font-size: 6rem;
+            align-items: center;
+        }
+    }
+}

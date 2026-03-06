@@ -1,0 +1,107 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.eventos-registro{
+    @include m.contenedor;
+
+    @include m.tablet{
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    &__listado{
+        @include m.tablet{
+            flex: 0 0 60%;
+
+        }
+    }
+    &__grid{
+        @include m.grid(1, 2rem);
+        @include m.tablet{
+            @include m.grid(2, 3rem)
+        }
+    }
+
+    &__heading{
+        &--conferencias{
+            color: v.$azul;
+            white-space: nowrap;
+            @include m.texto-fluido(2rem, 5rem);
+        }
+        &--workshops{
+            color: v.$secundario;
+            white-space: nowrap;
+            margin: 5rem;
+            @include m.texto-fluido(2rem, 5rem);
+        }
+    }
+
+    &__fecha{
+        margin: 6rem 0 3rem 0;
+        
+        border-bottom: solid 1px v.$gris;
+        padding-bottom: 1rem;
+    }
+}
+
+.registro{
+    
+    @include m.tablet{
+        flex: 0 0 40%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 3rem;
+
+    }
+
+    &__evento{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        &:nth-child(even){
+            background-color: v.$gris-claro;
+            border-radius: 1rem;
+        }
+    }
+    &__heading{
+        margin: 2.5rem 0;
+    }
+    &__nombre{
+        font-size: 2rem;
+        font-weight: v.$bold;
+        margin: 1rem 0;
+    }
+    &__eliminar{
+        all: unset;
+        color: red;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__texto{
+        text-align: center;
+        font-size: 1.5rem;
+        color: red;
+    }
+    &__regalo{
+        margin-top: 3rem;
+    }
+    &__label{
+        display: block;
+        font-size: 2.2rem;
+        font-weight: v.$bold;
+        margin-bottom: 1rem;
+        
+    }
+    &__select{
+        width: 100%;
+        background-color: v.$blanco;
+        border: 1px solid v.$gris;
+        padding: 1rem;
+        border-radius: .5rem;
+        opacity: .5;
+    }
+
+
+}

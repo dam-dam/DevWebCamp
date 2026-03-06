@@ -1,0 +1,12 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.error{
+    &__contenedor{
+        text-align: center;
+    }
+
+    &__enlace{
+        color: blue;
+    }
+}
